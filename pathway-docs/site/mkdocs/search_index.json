@@ -1,0 +1,89 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Welcome to pyPathway\n\n\nA python package for playing with biology pathways \ngithub\n.\n\n\nUsage\n\n\n\n\nSearch and retrieve pathway from KEGG and Pathway Common\n\n\nParse \nBioPAX\n, \nSBGN-ML\n, \nKGML\n format pathway file\n\n\nIntergrate \ngenome\n, \ntranscriptomes\n, \nprotomes\n, \nmetabonomics\n data to pathway\n\n\nInteractive visualize data via \nIPython\n and \nmatplotlib\n\n\n\n\nCredit\n\n\n\n\nCytoscape.js\n\n\nBioPAX project\n\n\nSBGN project\n\n\nSBGNviz.js\n\n\n\n\nInstallation\n\n\npip install pyPathway\n\n\n\n\n\nHello World\n\n\nimport\n \npyPathway\n\n\n\n\n\n\n\n\nNote\n\n\nhahaha\n\n\n\n\n\n\nDon't try this at home\n\n\nIf you do, you will regret it.\n\n\n\n\nclass\n \na\n:\n\n    \ndef\n \n__init__\n()\n:\n\n        \npass\n\n\n\n\n\n\nPackage Overall\n\n\nHere should be a image of package structure\n\n\nPathway Search and Retrieve\n\n\nSupported database\n\n\n\n\nKEGG\n\n\nReactome\n\n\nPathway Common\n\n\n\n\nSupported format\n\n\n\n\nKGML\n\n\nBioPAX\n\n\nSBGN-PD\n\n\n\n\nAuto-Layout\n\n\nsupport auto-layout algothrim: CoSE.\n\n\nData Integration\n\n\n\n\nGenome\n\n\nTranstomes\n\n\nprotomes\n\n\nmetabonomics\n\n\n\n\nInteractive API\n\n\n\n\nMouse Event Handle in Python\n\n\nAdvance usage", 
+            "title": "Get Started"
+        }, 
+        {
+            "location": "/#welcome-to-pypathway", 
+            "text": "A python package for playing with biology pathways  github .", 
+            "title": "Welcome to pyPathway"
+        }, 
+        {
+            "location": "/#usage", 
+            "text": "Search and retrieve pathway from KEGG and Pathway Common  Parse  BioPAX ,  SBGN-ML ,  KGML  format pathway file  Intergrate  genome ,  transcriptomes ,  protomes ,  metabonomics  data to pathway  Interactive visualize data via  IPython  and  matplotlib", 
+            "title": "Usage"
+        }, 
+        {
+            "location": "/#credit", 
+            "text": "Cytoscape.js  BioPAX project  SBGN project  SBGNviz.js", 
+            "title": "Credit"
+        }, 
+        {
+            "location": "/#installation", 
+            "text": "pip install pyPathway", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/#hello-world", 
+            "text": "import   pyPathway    Note  hahaha    Don't try this at home  If you do, you will regret it.   class   a : \n     def   __init__ () : \n         pass", 
+            "title": "Hello World"
+        }, 
+        {
+            "location": "/#package-overall", 
+            "text": "Here should be a image of package structure", 
+            "title": "Package Overall"
+        }, 
+        {
+            "location": "/#pathway-search-and-retrieve", 
+            "text": "", 
+            "title": "Pathway Search and Retrieve"
+        }, 
+        {
+            "location": "/#supported-database", 
+            "text": "KEGG  Reactome  Pathway Common", 
+            "title": "Supported database"
+        }, 
+        {
+            "location": "/#supported-format", 
+            "text": "KGML  BioPAX  SBGN-PD", 
+            "title": "Supported format"
+        }, 
+        {
+            "location": "/#auto-layout", 
+            "text": "support auto-layout algothrim: CoSE.", 
+            "title": "Auto-Layout"
+        }, 
+        {
+            "location": "/#data-integration", 
+            "text": "Genome  Transtomes  protomes  metabonomics", 
+            "title": "Data Integration"
+        }, 
+        {
+            "location": "/#interactive-api", 
+            "text": "Mouse Event Handle in Python  Advance usage", 
+            "title": "Interactive API"
+        }, 
+        {
+            "location": "/user-guide/docs/", 
+            "text": "\u54c8\u54c8\u54c8", 
+            "title": "Writing your docs"
+        }, 
+        {
+            "location": "/user-guide/docs/#_1", 
+            "text": "", 
+            "title": "\u54c8\u54c8\u54c8"
+        }, 
+        {
+            "location": "/user-guide/docs/", 
+            "text": "\u54c8\u54c8\u54c8", 
+            "title": "Styling your docs"
+        }, 
+        {
+            "location": "/user-guide/docs/#_1", 
+            "text": "", 
+            "title": "\u54c8\u54c8\u54c8"
+        }
+    ]
+}
