@@ -1,1 +1,1426 @@
-Building!
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Raspberry PI" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sheep's Knowledge Base">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Sheep's Knowledge Base">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sheep's Knowledge Base">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+  <title> Sheep's Knowledge Base </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-83717326-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Sheep's Knowledge Base</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">dont hesitate, just do it</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/04/cytoscape-js/" itemprop="url">
+                  Cytoscape.js drawing simple elements
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-04T13:39:31+08:00" content="2016-09-04">
+              2016-09-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/software/" itemprop="url" rel="index">
+                    <span itemprop="name">software</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Cytoscape-js"><a href="#Cytoscape-js" class="headerlink" title="Cytoscape.js"></a>Cytoscape.js</h2><blockquote>
+<p>Graph theory (a.k.a. network) library for analysis and visualisation</p>
+</blockquote>
+<h2 id="Official-site"><a href="#Official-site" class="headerlink" title="Official site"></a>Official site</h2><p><a href="http://js.cytoscape.org/" target="_blank" rel="external">http://js.cytoscape.org/</a></p>
+<h2 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h2><p>like most drawing library, the setup processdure is same:</p>
+<ul>
+<li><p>include the libraries</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://cdn.bootcss.com/cytoscape/2.7.8/cytoscape.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>init with a canvas</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"cy"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>using a drawing config to create a cytoscape graphic.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> cy = <span class="built_in">window</span>.cy = cytoscape(config)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="HelloWorld"><a href="#HelloWorld" class="headerlink" title="HelloWorld"></a>HelloWorld</h2><p>using the setup example in the official site, combine with what we mentioned up, we can setup a hello world page:</p>
+<h3 id="code"><a href="#code" class="headerlink" title="code"></a>code</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>first_cytoscape<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://cdn.bootcss.com/cytoscape/2.7.8/cytoscape.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"cy"</span> <span class="attr">style</span>=<span class="string">"width: 800px; height: 600px; background-color: #1c94c4"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">        <span class="keyword">var</span> config = &#123;</div><div class="line"></div><div class="line">            container: <span class="built_in">document</span>.getElementById(<span class="string">'cy'</span>),</div><div class="line"></div><div class="line">            elements: [</div><div class="line">                &#123; <span class="comment">// node n1</span></div><div class="line">                    group: <span class="string">'nodes'</span>, <span class="comment">// 'nodes' for a node, 'edges' for an edge</span></div><div class="line">                    data: &#123; </div><div class="line">                        id: <span class="string">'n1'</span>, </div><div class="line">                        parent: <span class="string">'nparent'</span>, </div><div class="line">                    &#125;,</div><div class="line">                    scratch: &#123;</div><div class="line">                        foo: <span class="string">'bar'</span></div><div class="line">                    &#125;,</div><div class="line">                    position: &#123;</div><div class="line">                        x: <span class="number">100</span>,</div><div class="line">                        y: <span class="number">100</span></div><div class="line">                    &#125;,</div><div class="line">                    selected: <span class="literal">false</span>,                    </div><div class="line">                    selectable: <span class="literal">true</span>,</div><div class="line">                    locked: <span class="literal">false</span>,</div><div class="line">                    grabbable: <span class="literal">true</span>,                    </div><div class="line">                    classes: <span class="string">'foo bar'</span> </div><div class="line">                &#125;,</div><div class="line"></div><div class="line">                &#123; <span class="comment">// node n2</span></div><div class="line">                    data: &#123; id: <span class="string">'n2'</span> &#125;,</div><div class="line">                    renderedPosition: &#123; x: <span class="number">200</span>, y: <span class="number">200</span> &#125; </div><div class="line">                &#125;,</div><div class="line"></div><div class="line">                &#123; <span class="comment">// node n3</span></div><div class="line">                    data: &#123; id: <span class="string">'n3'</span>, parent: <span class="string">'nparent'</span> &#125;,</div><div class="line">                    position: &#123; x: <span class="number">123</span>, y: <span class="number">234</span> &#125;</div><div class="line">                &#125;,</div><div class="line"></div><div class="line">                &#123; <span class="comment">// node nparent</span></div><div class="line">                    data: &#123; id: <span class="string">'nparent'</span>, position: &#123; x: <span class="number">200</span>, y: <span class="number">100</span> &#125; &#125;</div><div class="line">                &#125;,</div><div class="line"></div><div class="line">                &#123; <span class="comment">// edge e1</span></div><div class="line">                    data: &#123;</div><div class="line">                        id: <span class="string">'e1'</span>,</div><div class="line">                        source: <span class="string">'n1'</span>, </div><div class="line">                        target: <span class="string">'n2'</span>  </div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            ],</div><div class="line">            layout: &#123;</div><div class="line">                name: <span class="string">'preset'</span></div><div class="line">            &#125;,</div><div class="line">            style: [</div><div class="line">                &#123;</div><div class="line">                    selector: <span class="string">'node'</span>,</div><div class="line">                    style: &#123;</div><div class="line">                        <span class="string">'content'</span>: <span class="string">'data(id)'</span></div><div class="line">                    &#125;</div><div class="line">                &#125;,</div><div class="line"></div><div class="line">                &#123;</div><div class="line">                    selector: <span class="string">':parent'</span>,</div><div class="line">                    style: &#123;</div><div class="line">                        <span class="string">'background-opacity'</span>: <span class="number">0.6</span></div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            ]</div><div class="line"></div><div class="line">        &#125;;</div><div class="line">        cy = cytoscape(config);</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="result"><a href="#result" class="headerlink" title="result"></a>result</h3><iframe src="../../../../resource/cyto/first_step.html" width="100%" height="600px" frameborder="0" allowfullscreen></iframe>
+
+<p>next, will only provide the changed config.</p>
+<h2 id="config"><a href="#config" class="headerlink" title="config"></a>config</h2><p>the config, and showed in last section, describe what(the nodes and edges) and how(styles) in the map.</p>
+<ul>
+<li><p>elements, it contains the nodes and the edges</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">elements: []</div></pre></td></tr></table></figure>
+</li>
+<li><p>layout, the layout methods, if you want to set the fixed position, using the preset:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">layout: &#123;</div><div class="line">	name: preset,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>style: a list of css-style tell cy how to render objects</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">style: []</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="config-elements"><a href="#config-elements" class="headerlink" title="config: elements"></a>config: elements</h3><h3 id="config-style"><a href="#config-style" class="headerlink" title="config: style"></a>config: style</h3>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/04/embded-iframe/" itemprop="url">
+                  在Hexo中嵌入iframe
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-04T12:10:49+08:00" content="2016-09-04">
+              2016-09-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/software/" itemprop="url" rel="index">
+                    <span itemprop="name">software</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Sample"><a href="#Sample" class="headerlink" title="Sample:"></a>Sample:</h1><iframe src="../../../../resource/KEGG/demo.html" width="100%" height="800px" frameborder="0" allowfullscreen></iframe>
+
+<h1 id="宽度"><a href="#宽度" class="headerlink" title="宽度"></a>宽度</h1><p>使用next主题，在1080p屏幕下内容部分过窄。<br>按照: 修改主题style: <a href="https://github.com/iissnan/hexo-theme-next/issues/759#issuecomment-202242848" target="_blank" rel="external">Github Issue</a></p>
+<h1 id=""><a href="#" class="headerlink" title="??"></a>??</h1><p>本地jquery提示错误。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/17/raspberry-pi-ip-visualize/" itemprop="url">
+                  Visualize the IP address of the traffic through the Raspberry PI
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-17T12:21:08+08:00" content="2016-08-17">
+              2016-08-17
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/network/" itemprop="url" rel="index">
+                    <span itemprop="name">network</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="The-IO-performance-of-RPi-3B"><a href="#The-IO-performance-of-RPi-3B" class="headerlink" title="The IO performance of RPi 3B"></a>The IO performance of RPi 3B</h2><p>The hardware of a RPi 3B is listed below, no surprise, just ordinary as his ancestor：<br><img src="https://www.raspberrypi.org/wp-content/uploads/2016/02/Pi_3_Model_B.png" alt="from rpi’s official site"></p>
+<ul>
+<li><code>802.11n</code> Wireless LAN</li>
+<li>4 USB ports (<code>usb 2.0</code>)</li>
+<li>40 GPIO pins</li>
+<li>Full HDMI port</li>
+<li>Ethernet port(<code>100Mbps</code>)</li>
+<li>Camera interface (CSI)</li>
+<li>Display interface (DSI)</li>
+<li>Micro SD card slot (now push-pull rather than push-push)</li>
+</ul>
+<p>In this generation of RPi, this limitation of performance is mainly in its IO performance, The <code>100Mbps</code> Ethernet, <code>usb 2.0</code> and <code>802.11n</code> Wifi. This kind of performance has kill is possibility to become a <code>NAS</code>,  which I think should have at least 2 <code>STAT</code>, <code>use3.0</code>, <code>1Gbps</code> Ethernet, and a powerful Soc to satisfy this kind of IO requirement. But to be a wireless router, RPi its enough.</p>
+<h2 id="Sniff-the-packet"><a href="#Sniff-the-packet" class="headerlink" title="Sniff the packet"></a>Sniff the packet</h2><p>At the beginning, I use <code>scapy</code> to capture the traffic through the RPi like:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sniff(iface=<span class="string">'ppp0'</span>, prn=<span class="keyword">lambda</span> x: self.handle(x))</div></pre></td></tr></table></figure></p>
+<p>however, its cpu usage is ultra hight to &gt;100%, result in a high ratio of package loss. (~10% captured).<br>After that I find use layer 2’s <code>socket</code> and <code>tcpdump</code> may be better solution.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo tcpdump -i ppp0 -w out traffic.pcap</div></pre></td></tr></table></figure>
+<p>which i can save the traffic to a <code>pcap</code> file and handle it in <code>scapy</code>. </p>
+<h2 id="Handle-the-packet-and-get-the-address"><a href="#Handle-the-packet-and-get-the-address" class="headerlink" title="Handle the packet and get the address:"></a>Handle the packet and get the address:</h2><p>In this capture, we will get the ip address of the traffic, check if it is the local ip or board cast ip address. than, query the public api to get the ipaddress.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">pkts = rdpkt(<span class="string">"traffic.pcap"</span>)</div><div class="line">results = []</div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> pkts:</div><div class="line">	<span class="keyword">if</span> IP <span class="keyword">in</span> x:</div><div class="line">		<span class="keyword">if</span> <span class="keyword">not</span> x[IP].dst[:<span class="number">7</span>] == <span class="string">'192.168'</span> <span class="keyword">and</span> <span class="keyword">not</span> x[IP][:<span class="number">10</span>] == <span class="string">'255.255.255'</span></div><div class="line">			results.append(x[IP].dst)</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/17/csgo-internal-1/" itemprop="url">
+                  macOS Csgo Internal Hack partI
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-17T00:58:28+08:00" content="2016-08-17">
+              2016-08-17
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/software/" itemprop="url" rel="index">
+                    <span itemprop="name">software</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Overviews"><a href="#Overviews" class="headerlink" title="Overviews"></a>Overviews</h2><ul>
+<li>Inject a dylib to <code>csgo_osx64</code></li>
+<li>Get the <code>interface</code> and <code>method</code>’s address</li>
+<li>Hook <code>method</code></li>
+<li>Build up the project</li>
+</ul>
+<h2 id="PartI-Injection-and-Read-module-handle-and-method-address"><a href="#PartI-Injection-and-Read-module-handle-and-method-address" class="headerlink" title="PartI, Injection and Read module handle and method address"></a>PartI, Injection and Read module handle and method address</h2><p>&emsp;&emsp;To build a <code>internal</code> hack, we simply inject a <code>Dynamic Link Library</code> to the gaming process. Start a new <code>Thread</code>, and gather the information we care, and do something.<br>&emsp;&emsp;In this part of the article, we start with the topic of Injection, which is a very normal task in <code>windows</code> and <code>linux</code>, luckily, there are few wheel we can use in macOS:</p>
+<ul>
+<li><a href="http://soundly.me/osx-injection-override-tutorial-hello-world/" target="_blank" rel="external">OSX injection tutorial: Hello World</a></li>
+<li><a href="https://github.com/scen/osxinj" target="_blank" rel="external">A Example to show the Inject process</a></li>
+<li><a href="https://github.com/jar-o/osxinj_tut" target="_blank" rel="external">And its repo provide the hook method</a></li>
+</ul>
+<h3 id="First-step-Build-the-project"><a href="#First-step-Build-the-project" class="headerlink" title="First step: Build the project"></a>First step: Build the project</h3><p>&emsp;&emsp;Let us start with the project the <a href="https://github.com/scen/osxinj" target="_blank" rel="external">second repo</a> mention last section, and copy the third’s repo’s testdylib’s code to replace the second one. so now we get the project. however as <code>valve</code> currently update cogs to 64bit, we need to set 4 project to <code>x86_64</code> in project setting. after this, our project look like this: <code>there should be a image</code><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// the code in install will run after the dylib's injection</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">install</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"loaded\n!"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="Get-the-module-address-and-Find-CreateInterface"><a href="#Get-the-module-address-and-Find-CreateInterface" class="headerlink" title="Get the module address and Find CreateInterface:"></a>Get the module address and Find <code>CreateInterface</code>:</h2><p>&emsp;&emsp;In <code>windows</code> we have <code>GetModuleHandle</code>(may be wrong..)to get the handle of a <code>dll</code>. in macOS, we have the <code>dlopen</code> from <code>dlfcn.h</code> and apple provide detailed docs:</p>
+<ul>
+<li><a href="https://developer.apple.com/library/mac/documentation/DeveloperTools/Conceptual/DynamicLibraries/100-Articles/DynamicLibraryUsageGuidelines.html" target="_blank" rel="external">Dynamic Library Usage Guidelines</a></li>
+<li><a href="https://developer.apple.com/library/mac/documentation/DeveloperTools/Reference/MachOReference/index.html#//apple_ref/c/func/dlopen" target="_blank" rel="external">OS X ABI Dynamic Loader Reference</a><br>The methods we use are detail listed in the docs, what we want to do is simply call them to get the address</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">auto</span> address_of_engine = dlopen(<span class="string">"client.dylib"</span>, RTLD_NOW);</div><div class="line"><span class="keyword">if</span> (!address_of_engine)&#123;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"Unable to read the address of client.dylib: %s\n"</span>, dlerror());</div><div class="line">    <span class="built_in">exit</span>(<span class="number">0</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>&emsp;&emsp;if the <code>dylib</code> has been added into the process’s scope, what is the situation what we meets here, the method will return the handle(address of the dylib in the memory).<br>&emsp;&emsp;After we get the address of the module, we start to ask where is <code>CreateInterface</code> which is the function to get the interface(like <code>entity_list</code>, <code>engine_trace</code>) which module expose to the <code>extern</code>.<br>use the <code>dlsym</code> to the the address:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// define the CreateInterface first</span></div><div class="line"><span class="keyword">typedef</span> <span class="keyword">void</span>* (*CreateInterface)(<span class="keyword">const</span> <span class="keyword">char</span>*, <span class="keyword">int</span> *);</div><div class="line"></div><div class="line"><span class="comment">// next call method dlsym</span></div><div class="line"><span class="keyword">auto</span> clintFactory = (CreateInterface)dlsym(address_of_engine, <span class="string">"CreateInterface"</span>);</div><div class="line"><span class="keyword">if</span> (!address_of_create_interface)&#123;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"Unable to read the address of CreateInterface: %s\n"</span>, dlerror());</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="Use-Factory-to-get-the-Interface"><a href="#Use-Factory-to-get-the-Interface" class="headerlink" title="Use *Factory to get the Interface:"></a>Use <em>*</em>Factory to get the Interface:</h3><p> &emsp;&emsp;After we get the <code>ClientFactory</code> and <code>EngineFactory</code> we have to get the useful object we need when making a hack. like this</p>
+<pre><code class="cpp"><span class="keyword">auto</span> entity_list = (IClientEntityList *)clientFactory(“VClientEntityList003<span class="string">", nil);</span>
+</code></pre>
+<p> After doing this, we get the basic to making a <strong>Internal Hack</strong>.</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/12/python-echart/" itemprop="url">
+                  使用Echarts-Python API生成Options并显示－PartI
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-12T16:16:17+08:00" content="2016-08-12">
+              2016-08-12
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/software/" itemprop="url" rel="index">
+                    <span itemprop="name">software</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h2><p>首先来尝试一下官方的例子:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 在IPython环境下</span></div><div class="line"><span class="keyword">from</span> echarts <span class="keyword">import</span> Echart, Legend, Bar, Axis</div><div class="line"></div><div class="line">chart = Echart(<span class="string">'GDP'</span>, <span class="string">'This is a fake chart'</span>)</div><div class="line">chart.use(Bar(<span class="string">'China'</span>, [<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]))</div><div class="line">chart.use(Legend([<span class="string">'GDP'</span>]))</div><div class="line">chart.use(Axis(<span class="string">'category'</span>, <span class="string">'bottom'</span>, data=[<span class="string">'Nov'</span>, <span class="string">'Dec'</span>, <span class="string">'Jan'</span>, <span class="string">'Feb'</span>]))</div><div class="line">chart.plot()</div></pre></td></tr></table></figure></p>
+<iframe src="../../../../resource/pyechartI/first.html" width="100%" height="500px" frameborder="0" allowfullscreen></iframe>
+
+<h2 id="兼容IPython"><a href="#兼容IPython" class="headerlink" title="兼容IPython"></a>兼容IPython</h2><h2 id="常用图表-饼图，柱状图，折线图和散点图"><a href="#常用图表-饼图，柱状图，折线图和散点图" class="headerlink" title="常用图表: 饼图，柱状图，折线图和散点图"></a>常用图表: 饼图，柱状图，折线图和散点图</h2><h3 id="饼图"><a href="#饼图" class="headerlink" title="饼图:"></a>饼图:</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> echarts <span class="keyword">import</span> Echart, Legend, Bar, Axis, Pie</div><div class="line">chart = Echart(<span class="string">'Map Picks in MLG'</span>, <span class="string">'In group A'</span>)</div><div class="line">chart.use(Pie(<span class="string">'Map Picks in MLG'</span>, </div><div class="line">              [&#123;<span class="string">'value'</span>: <span class="number">2</span>, <span class="string">'name'</span>: <span class="string">'de_dust2'</span>&#125;,</div><div class="line">               &#123;<span class="string">'value'</span>: <span class="number">3</span>, <span class="string">'name'</span>: <span class="string">'de_cache'</span>&#125;,</div><div class="line">               &#123;<span class="string">'value'</span>: <span class="number">12</span>, <span class="string">'name'</span>: <span class="string">'de_mirage'</span>&#125;,</div><div class="line">               &#123;<span class="string">'value'</span>: <span class="number">9</span>, <span class="string">'name'</span>: <span class="string">'de_inferno'</span>&#125;</div><div class="line">              ],</div><div class="line">            radius=[<span class="string">"50%"</span>, <span class="string">"70%"</span>])</div><div class="line">         )</div><div class="line">chart.use(Legend([<span class="string">"de_dust2"</span>, <span class="string">"de_cache"</span>, <span class="string">"de_mirage"</span>, <span class="string">"de_inferno"</span>]))</div><div class="line"><span class="keyword">del</span> chart.json[<span class="string">"xAxis"</span>]</div><div class="line"><span class="keyword">del</span> chart.json[<span class="string">"yAxis"</span>]</div><div class="line">chart.plot()</div></pre></td></tr></table></figure>
+<p>结果:</p>
+<iframe src="../../../../resource/pyechartI/pie.html" width="100%" height="500px" frameborder="0" allowfullscreen></iframe>
+
+<h3 id="柱状图"><a href="#柱状图" class="headerlink" title="柱状图:"></a>柱状图:</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> echarts <span class="keyword">import</span> Echart, Legend, Bar, Axis</div><div class="line">chart = Echart(<span class="string">"The Winrate of Tyloo and VG in this year"</span>, <span class="string">"The data is faked"</span>)</div><div class="line">chart.use(Bar(<span class="string">"Tyloo"</span>, [<span class="string">"50"</span>, <span class="string">"72"</span>, <span class="string">"64"</span>, <span class="string">"42"</span>, <span class="string">"30"</span>, <span class="string">"72"</span>], ))</div><div class="line">chart.use(Bar(<span class="string">"VG"</span>, [<span class="string">"55"</span>, <span class="string">"48"</span>, <span class="string">"56"</span>, <span class="string">"63"</span>, <span class="string">"70"</span>, <span class="string">"55"</span>]))</div><div class="line">chart.use(Axis(<span class="string">"category"</span>, <span class="string">"bottom"</span>, <span class="string">"map"</span>, [<span class="string">"de_dust2"</span>, <span class="string">"de_cache"</span>, <span class="string">"de_mirage"</span>, <span class="string">"de_cbble"</span>, <span class="string">"de_nuke"</span>, <span class="string">"de_cbble"</span>]))</div><div class="line">chart.use(Legend([<span class="string">"Tyloo"</span>, <span class="string">"VG"</span>], position=(<span class="string">'center'</span>, <span class="string">"bottom"</span>)))</div><div class="line">chart.json</div><div class="line">chart.plot()</div></pre></td></tr></table></figure>
+<iframe src="../../../../resource/pyechartI/bar.html" width="100%" height="500px" frameborder="0" allowfullscreen></iframe>
+
+<h3 id="散点图"><a href="#散点图" class="headerlink" title="散点图:"></a>散点图:</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy</div><div class="line"><span class="keyword">from</span> echarts <span class="keyword">import</span> Echart, Legend, Scatter, Axis</div><div class="line">data = numpy.random.uniform(<span class="number">0</span>, <span class="number">100</span>, <span class="number">100</span>).reshape(<span class="number">50</span>, <span class="number">2</span>).tolist()</div><div class="line">chart = Echart(<span class="string">"Random Number Distribute"</span>, <span class="string">"just a rundom number"</span>)</div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> data:</div><div class="line">    chart.use(Scatter(<span class="string">"&#123;&#125;"</span>.format(numpy.random.uniform(<span class="number">0</span>, <span class="number">100</span>, <span class="number">1</span>).tolist()[<span class="number">0</span>]), [x]))</div><div class="line">chart.use(Legend([<span class="string">"data"</span>]))</div><div class="line">chart.plot()</div></pre></td></tr></table></figure>
+<p>结果:</p>
+<iframe src="../../../../resource/pyechartI/scatter.html" width="100%" height="500px" frameborder="0" allowfullscreen></iframe>
+
+<h3 id="折线图"><a href="#折线图" class="headerlink" title="折线图"></a>折线图</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> echarts <span class="keyword">import</span> Echart, Legend, Line, Axis, Tooltip</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> math</div><div class="line">data = [[round(t, <span class="number">4</span>) <span class="keyword">for</span> t <span class="keyword">in</span> np.random.uniform(<span class="number">15</span> * x, <span class="number">25</span> * (x + <span class="number">1</span>), <span class="number">7</span>).tolist()] <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">4</span>)]</div><div class="line">chart = Echart(<span class="string">"The expression level in four organsim"</span>, <span class="string">"random data"</span>)</div><div class="line">organism = [<span class="string">"Spleen"</span>, <span class="string">"Skin"</span>, <span class="string">"HK"</span>, <span class="string">"Jill"</span>]</div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">4</span>):</div><div class="line">    chart.use(Line(organism[x], data[x]))</div><div class="line">chart.use(Axis(<span class="string">'category'</span>, <span class="string">'bottom'</span>, data=[<span class="string">"0H"</span>, <span class="string">"6H"</span>, <span class="string">"12H"</span>, <span class="string">"2Day"</span>, <span class="string">"3Day"</span>, <span class="string">"5Day"</span>, <span class="string">"7Day"</span>], boundaryGap=<span class="keyword">False</span>))</div><div class="line">chart.use(Axis(<span class="string">'value'</span>, <span class="string">'left'</span>))</div><div class="line">chart.use(Legend(data=[<span class="string">"Spleen"</span>, <span class="string">"Skin"</span>, <span class="string">"HK"</span>, <span class="string">"Jill"</span>], position=(<span class="string">'center'</span>, <span class="string">'bottom'</span>)))</div><div class="line">chart.use(Tooltip())</div><div class="line">chart.plot()</div></pre></td></tr></table></figure>
+<p>结果:</p>
+<iframe src="../../../../resource/pyechartI/line.html" width="100%" height="500px" frameborder="0" allowfullscreen></iframe>
+
+
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题:"></a>问题:</h2><ul>
+<li>嵌入IFrame大小问题<code>width:, height: ?</code>。</li>
+<li>axis 无法隐藏问题，特别是在<code>饼图</code>中。</li>
+<li>没有代码提示。</li>
+<li>交互设置困难。</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/11/3dmol-js/" itemprop="url">
+                  Visualize a 3D biology model
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-11T20:17:44+08:00" content="2016-08-11">
+              2016-08-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/software/" itemprop="url" rel="index">
+                    <span itemprop="name">software</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="3D模型插件"><a href="#3D模型插件" class="headerlink" title="3D模型插件"></a>3D模型插件</h2><p>长久以来，生物学的三维模型通常都是通过<code>Java</code>插件来显示，这个比<code>Adobe Flash</code>还要古老的<code>Applet</code>简直是古董级的东西，直到近期才开始使用原生技术。</p>
+<h2 id="3Dmol-js"><a href="#3Dmol-js" class="headerlink" title="3Dmol.js"></a>3Dmol.js</h2><p>这是一个基于<code>WebGL</code>的Javascript库，支持<code>pdb</code>, <code>sdf</code>, <code>mol2</code>, <code>xyz</code>, 和<code>cube</code>这些完全不认识的格式。没错，生物界可真的是封闭的很，每个人都喜欢提出一个新的格式，虽然很多都是基于<code>XML</code>的存在。</p>
+<blockquote>
+<p>Nicholas Rego and David Koes 3Dmol.js: molecular visualization with WebGL Bioinformatics (2015) 31 (8): 1322-1324 doi:10.1093/bioinformatics/btu829</p>
+</blockquote>
+<h2 id="HOWTO"><a href="#HOWTO" class="headerlink" title="HOWTO"></a>HOWTO</h2><p>和大部分javascript库一样，只需要一个canvas，然后就可以在上面显示一些模型了，使用非常简单:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container-model"</span> <span class="attr">class</span>=<span class="string">"mol-container"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>然后初始化:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> element = $(<span class="string">"#container-model"</span>)</div><div class="line"><span class="keyword">var</span> config = &#123; defaultcolors: $<span class="number">3</span>Dmol.rasmolElementColors, </div><div class="line">		backgroundColor: <span class="string">'white'</span> &#125;;</div><div class="line">$<span class="number">3</span>Dmol.createViewer( element, config );</div></pre></td></tr></table></figure></p>
+<p>最后加载一个模型：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">v.addModel( data, pdb_link );</div><div class="line">v.setStyle(&#123;&#125;, &#123;cartoon: &#123;color: <span class="string">'spectrum'</span>&#125;&#125;);</div><div class="line">v.zoomTo();v.render();                                                 </div><div class="line">v.zoom(<span class="number">1.2</span>, <span class="number">1000</span>);</div></pre></td></tr></table></figure>
+<p>然后就可以了。</p>
+<p>结果:</p>
+<p><iframe width="100%" height="500px" src="../../../../resource/3dmol/model.html" frameborder="0"></iframe></p>
+<h2 id="Interactive"><a href="#Interactive" class="headerlink" title="Interactive:"></a>Interactive:</h2>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/10/hi-my-friend/" itemprop="url">
+                  OpenWrt Overview
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-10T18:54:00+08:00" content="2016-08-10">
+              2016-08-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/hardware/" itemprop="url" rel="index">
+                    <span itemprop="name">hardware</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Wireless-Freedom"><a href="#Wireless-Freedom" class="headerlink" title="Wireless Freedom"></a><strong>Wireless Freedom</strong></h2><p><code>Openwrt</code> 是一个运行在MIPS, ARM, X86等各类嵌入式设备上的Linux系统。它的文件系统是可写的，意味着修改系统不需要重新编译整个系统。<br>开发者可以交叉编译软件到Openwrt，也可以使用它自带的<code>opkg</code>包管理系统安装软件/库。</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">opkg update</div><div class="line">opkg install libpcap</div></pre></td></tr></table></figure>
+<h3 id="没错，这就是一个liunx"><a href="#没错，这就是一个liunx" class="headerlink" title="没错，这就是一个liunx!"></a>没错，这就是一个<strong>liunx</strong>!</h3><p>只是性能有所不足而已： 典型CPU</p>
+<ul>
+<li><p>MT7620: <code>580MHZ</code>, <code>MIPS</code>, <code>Single-Core</code></p>
+</li>
+<li><p>AR71xx: <code>MIPS</code>, <code>Single-Core</code>, <code>&lt;800MHZ</code></p>
+</li>
+</ul>
+<p>典型RAM/FLASH</p>
+<ul>
+<li><p>FLASH: 4M, 8M, 16M</p>
+</li>
+<li><p>RAM: 16M(天坑), 32M(主流), 64M(主流), 128M, 256M</p>
+</li>
+</ul>
+<h3 id="硬件支持列表"><a href="#硬件支持列表" class="headerlink" title="硬件支持列表:"></a>硬件支持列表:</h3><p><a href="https://wiki.openwrt.org/toh/start" target="_blank" rel="external">Openwork Wiki</a>, 好像除了tplink新出的坑爹货，其他基本都可以刷openwork的系统。</p>
+<h3 id="路由器"><a href="#路由器" class="headerlink" title="路由器"></a>路由器</h3><p>路由器无论搭载什么系统, 首要要求就是<strong>稳定性</strong>, 稳定性好的, 才能讨论五花八门的高级功能。Openwrt作为一个老牌的开源路由器系统，它的稳定性比起那些<code>MT762x</code>之流的智能路由器(<code>极路由1s</code>, <code>360智能路由</code>, <code>小米路由mini</code>, <code>联想newwifi mini</code>)高的不是一条街。和那些TP-LINK早期用料足的路由器在一个水平段(如<code>WR841N v5</code>)。<br><strong>如何选择一个稳定的路由器</strong>: </p>
+<ul>
+<li>TP-LINK远古时期的路由器, 确定能刷Openwrt, 缺点是很多都是二手。 </li>
+<li><p>一些智能路由器，用的都是类似的方案(ODM), soc性能也过得去，刷了Openwrt也没用什么问题。</p>
+<h2 id="基本用途"><a href="#基本用途" class="headerlink" title="基本用途"></a>基本用途</h2><p>整理一下思路，从连上网之前到连上网之后，到高级用途。</p>
+<h3 id="联网前-认证"><a href="#联网前-认证" class="headerlink" title="联网前: 认证"></a>联网前: 认证</h3><p>高校大量的openwrt路由器，基本都是为了绕过那些校园网的认证而刷的，<code>神州数码</code>, <code>DrCOM</code>, <code>iNode</code>之流，不仅客户短写的好像上世纪80年代的风格，尤其是图标，XP下都嫌难看，而且还限制wifi分享软件。所以刷openwrt跑认证就成了一种刚需。<br>开源的客户端:</p>
+</li>
+<li><p>DrCOM: <a href="https://github.com/drcoms/drcom-generic" target="_blank" rel="external">DrCOM-generic</a></p>
+</li>
+<li><p>神州数码: <a href="https://github.com/ouyangshiliang/zdclient-for-openwrt" target="_blank" rel="external">zdclient</a></p>
+</li>
+</ul>
+<h3 id="联网后"><a href="#联网后" class="headerlink" title="联网后"></a>联网后</h3><ol>
+<li><strong>翻墙</strong>: 前有PPTP，OpenVPN被GFW处理的服服帖帖，现在主流出墙基本都是shadowsocks。在路由器上配置ss, 并且使用PAC判断网站是否在墙外，并且自动代理，是目前最好的出墙方案。</li>
+<li><strong>多播</strong>: 如果测试本地运营商没有限制宽带多播的话，可以尝试虚拟WAN口多播叠加带宽。(移动好像一直都不可以)</li>
+<li><strong>NAS, 离线下载</strong>: Openwork极少有带STAT或者USB3.0接口，部分带USB2.0接口的路由器IO性能不佳，加上孱弱的SOC性能，基本上只能处理百兆网口的下载流量，由于USB口性能的限制，很多时候还达不到10MB/s(参考Raspberry 1代的usb和有限网口)。所以做NAS就一鸡肋，聊胜于无。但是离线下载一些720P的视频还是不错的。 <a href="https://wiki.openwrt.org/doc/uci/transmission" target="_blank" rel="external">配置transmission</a></li>
+<li><strong>去广告</strong>:…..</li>
+</ol>
+<h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><p>如果要在<code>Openwrt</code>上写<code>C</code>程序，还是比较麻烦的。还要找一个<code>linux</code>的机器交叉编译，光配置和下载依赖包，可能就要一个晚上的时间，加上编译系统的3 4个小时，是一件费时费力的过程。况且<code>C</code>程序编程还十分繁琐。所以能运行<code>Python</code>就好了。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 安装</span></div><div class="line">opkg update</div><div class="line">opkg install python-simple</div><div class="line">opkg install python-codec</div></pre></td></tr></table></figure></p>
+<p>大致会消耗2.7MB的空间，对于8M <code>Flash</code>的路由器来说应该没有太多的压力。之后就可以使用socket模块愉快的抓包了。</p>
+<p>Scut python版Drcom认证：</p>
+<ul>
+<li><p><a href="https://github.com/iseekwonderful/DrCOM-Scut" target="_blank" rel="external">DrCOM For Scut</a></p>
+</li>
+<li><p><a href="https://github.com/scutclient/pyscutclient_drcom" target="_blank" rel="external">Scapy版</a></p>
+</li>
+</ul>
+<h3 id="Scapy"><a href="#Scapy" class="headerlink" title="Scapy"></a>Scapy</h3><p>毕竟在包分析方面，用Raw socket写的程序还是比不上成熟的网络分析工具Scapy，所以安装一个scapy对包分析还是很有帮助的。安装过程：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">opkg update</div><div class="line">opkg upgrade tar wget</div><div class="line">opkg install python tcpdump unzip</div><div class="line">wget http://www.secdev.org/projects/scapy/files/scapy-latest.tar.gz</div><div class="line">tar -xvf scapy-latest.tar.gz</div><div class="line">cd scapy*</div><div class="line">python setup.py install</div><div class="line">cd ..</div><div class="line">rm -rf scapy*</div></pre></td></tr></table></figure>
+<p>抓一波包压压惊。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sniff(iface=<span class="string">'ppp0'</span>, prn=<span class="keyword">lambda</span> x: x.summary())</div></pre></td></tr></table></figure></p>
+<h2 id="HttP-Server"><a href="#HttP-Server" class="headerlink" title="HttP Server"></a>HttP Server</h2><p>不知道能不能跑得动…</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
+  
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/chi.png"
+               alt="sheep" />
+          <p class="site-author-name" itemprop="name">sheep</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/iseekwonderful" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">sheep</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

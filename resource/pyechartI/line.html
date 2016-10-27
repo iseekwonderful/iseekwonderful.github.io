@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/3.1.10/echarts.min.js"></script>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 95vw; height: 95vh;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+    "yAxis": [
+        {
+            "position": "left", 
+            "data": [], 
+            "type": "value"
+        }
+    ], 
+    "series": [
+        {
+            "type": "line", 
+            "data": [
+                7.8817, 
+                24.1023, 
+                18.7303, 
+                15.8181, 
+                22.0072, 
+                22.961, 
+                18.3839
+            ], 
+            "name": "Spleen"
+        }, 
+        {
+            "type": "line", 
+            "data": [
+                47.9021, 
+                46.2855, 
+                34.1269, 
+                25.691, 
+                25.1653, 
+                16.5097, 
+                26.635
+            ], 
+            "name": "Skin"
+        }, 
+        {
+            "type": "line", 
+            "data": [
+                69.6694, 
+                37.816, 
+                38.1283, 
+                47.135, 
+                73.4062, 
+                44.4443, 
+                63.5028
+            ], 
+            "name": "HK"
+        }, 
+        {
+            "type": "line", 
+            "data": [
+                61.6647, 
+                85.3934, 
+                58.5333, 
+                81.8508, 
+                48.4804, 
+                45.1237, 
+                91.3156
+            ], 
+            "name": "Jill"
+        }
+    ], 
+    "title": {
+        "text": "The expression level in four organsim", 
+        "subtext": "random data"
+    }, 
+    "tooltip": {
+        "trigger": "axis"
+    }, 
+    "xAxis": [
+        {
+            "position": "bottom", 
+            "data": [
+                "0H", 
+                "6H", 
+                "12H", 
+                "2Day", 
+                "3Day", 
+                "5Day", 
+                "7Day"
+            ], 
+            "boundaryGap": false, 
+            "type": "category"
+        }
+    ], 
+    "legend": {
+        "y": "bottom", 
+        "x": "center", 
+        "data": [
+            "Spleen", 
+            "Skin", 
+            "HK", 
+            "Jill"
+        ], 
+        "orient": "horizontal"
+    }
+};
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+</body>
+</html>
