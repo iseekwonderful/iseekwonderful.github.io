@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>map</title>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=d35f1e68fbadc5b4b1ffcc3a4f2b2929"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="bootstrap.css"/>
+
+</head>
+<body>
+    <div id="container" style="width:100vw; height:100vh"></div>
+    <script>
+        var source_data = [];
+        $.getJSON("data.json", function (data) {
+            source_data = data;
+            var map = new AMap.Map('container',{
+                zoom: 15,
+                center: [113.10805555555555, 23.029444444444445]
+            });
+            console.log("loaded");
+            for(var x = 0; x < data.length; x ++){
+                console.log(data[x]);
+                var content = document.createElement('div');
+                content.setAttribute("style", "width: 40px; height:40px;" +
+                        " background-image: url(map3.png);" + "color: black; font-size: 16px;");
+//                content.setAttribute("style", "text-align: center; font-color: red");
+                content.id = "marker" + data[x].id;
+                content.innerHTML = "<div style='text-align:center;padding-top: 5px'>" + data[x].id + "</div>";
+                marker = new AMap.Marker({
+                    position: data[x].location,
+                    title: x,
+                    map: map,
+                    content: content
+                });
+                function openInfo(pos, con) {
+                    var info = source_data[con];
+                    console.log(info);
+                    infoWindow = new AMap.InfoWindow({
+                        content: "<table class='table table-striped table-condensed'><tr><td>序号</td><td>" + info.id + "</td><td>名称</td><td>" +
+                        info.name + "</td></tr>" +
+                        "<tr><td>所在镇（街道）</td><td>" + info.block + "</td><td>所在位置</td><td>" + info.place + "</td></tr>" +
+                        "<tr><td>可接纳人数</td><td>" + info.ppl_count + "</td><td>面积</td><td>" + info.space + "</td></tr>" +
+                        "<tr><td>联系人姓名</td><td>" + info.person + "</td><td>手机</td><td>" + info.phone + "</td></tr>" +
+                        "<tr><td>类别</td><td>" + info.sort + "</td><td>固话</td><td>" + info.tel + "</td></tr></table>"
+                    });
+                    infoWindow.open(map, pos);
+                }
+                var _onClick = function(e){
+                    console.log(e.target);
+                    openInfo([e.lnglat.G, e.lnglat.J], e.target.H.title);
+                };
+                AMap.event.addListener(marker, 'click', _onClick);
+//                if (x == 2){
+//                    break;
+//                }
+            }
+        });
+    </script>
+</body>
+</html>
