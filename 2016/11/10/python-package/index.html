@@ -80,7 +80,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Raspberry PI" />
+  <meta name="keywords" content="python," />
 
 
 
@@ -96,12 +96,40 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Sheep's Knowledge Base">
-<meta property="og:url" content="http://yoursite.com/tags/3D/index.html">
+<meta name="description" content="一. 流程
+确定包的功能
+编写测试
+编写功能
+编写文档
+Debug
+
+测试测试驱动开发(TDD), 在编写某一个功能之前先编写测试用例，然后迅速使测试工作，然后重构掉其中不合理的部分。对于一个小的工程，首先编写测试可以明确需求和目标，加快开发速度。
+文档在包内的每一个类和函数中，都应该加入docstring，详细描述该类/函数的具体参数，功能和返回值。在编写完代码之后，应该使用自动化的工具来生成文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="写一个Python包">
+<meta property="og:url" content="http://yoursite.com/2016/11/10/python-package/index.html">
 <meta property="og:site_name" content="Sheep's Knowledge Base">
+<meta property="og:description" content="一. 流程
+确定包的功能
+编写测试
+编写功能
+编写文档
+Debug
+
+测试测试驱动开发(TDD), 在编写某一个功能之前先编写测试用例，然后迅速使测试工作，然后重构掉其中不合理的部分。对于一个小的工程，首先编写测试可以明确需求和目标，加快开发速度。
+文档在包内的每一个类和函数中，都应该加入docstring，详细描述该类/函数的具体参数，功能和返回值。在编写完代码之后，应该使用自动化的工具来生成文">
+<meta property="og:updated_time" content="2016-11-10T02:08:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sheep's Knowledge Base">
+<meta name="twitter:title" content="写一个Python包">
+<meta name="twitter:description" content="一. 流程
+确定包的功能
+编写测试
+编写功能
+编写文档
+Debug
+
+测试测试驱动开发(TDD), 在编写某一个功能之前先编写测试用例，然后迅速使测试工作，然后重构掉其中不合理的部分。对于一个小的工程，首先编写测试可以明确需求和目标，加快开发速度。
+文档在包内的每一个类和函数中，都应该加入docstring，详细描述该类/函数的具体参数，功能和返回值。在编写完代码之后，应该使用自动化的工具来生成文">
 
 
 
@@ -122,9 +150,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/3D/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/11/10/python-package/"/>
 
-  <title> 标签: 3D | Sheep's Knowledge Base </title>
+  <title> 写一个Python包 | Sheep's Knowledge Base </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -154,7 +182,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -252,46 +280,135 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        3D
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                写一个Python包
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-10T09:55:23+08:00" content="2016-11-10">
+              2016-11-10
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h1 id="一-流程"><a href="#一-流程" class="headerlink" title="一. 流程"></a>一. 流程</h1><ol>
+<li>确定包的功能</li>
+<li>编写测试</li>
+<li>编写功能</li>
+<li>编写文档</li>
+<li>Debug</li>
+</ol>
+<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>测试驱动开发(TDD), 在编写某一个功能之前先编写测试用例，然后迅速使测试工作，然后重构掉其中不合理的部分。对于一个小的工程，首先编写测试可以明确需求和目标，加快开发速度。</p>
+<h1 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h1><p>在包内的每一个类和函数中，都应该加入docstring，详细描述该类/函数的具体参数，功能和返回值。在编写完代码之后，应该使用自动化的工具来生成文档。</p>
+<h1 id="Debug"><a href="#Debug" class="headerlink" title="Debug"></a>Debug</h1><p>Debug….Debu….Deb…De…D..D.</p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/08/11/3dmol-js/" itemprop="url">
-              
-                <span itemprop="name">Visualize a 3D biology model</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-11T20:17:44+08:00"
-              content="2016-08-11" >
-          08-11
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag">#python</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/29/performance/" rel="next" title="Python performance optimize, a practise">
+                <i class="fa fa-chevron-left"></i> Python performance optimize, a practise
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/02/matplotlib-font/" rel="prev" title="macOS Matplotlib 字体指南(大雾">
+                macOS Matplotlib 字体指南(大雾 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -299,6 +416,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -318,8 +439,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/chi.png"
@@ -380,6 +510,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-流程"><span class="nav-number">1.</span> <span class="nav-text">一. 流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试"><span class="nav-number">2.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文档"><span class="nav-number">3.</span> <span class="nav-text">文档</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Debug"><span class="nav-number">4.</span> <span class="nav-text">Debug</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -483,6 +624,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 

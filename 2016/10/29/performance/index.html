@@ -80,7 +80,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="software,RPi,network," />
+  <meta name="keywords" content="Python, C," />
 
 
 
@@ -96,36 +96,16 @@
 
 
 
-<meta name="description" content="The IO performance of RPi 3BThe hardware of a RPi 3B is listed below, no surprise, just ordinary as his ancestor：
-
-802.11n Wireless LAN
-4 USB ports (usb 2.0)
-40 GPIO pins
-Full HDMI port
-Ethernet port(">
+<meta name="description" content="QuestionAssume that we have 10000 genes, which is quantitied in normal ppl and turmor ppl. We have a algorithm to convert it to a bool table, than we want to pick up the combinations of gene have sati">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Visualize the IP address of the traffic through the Raspberry PI">
-<meta property="og:url" content="http://yoursite.com/2016/08/17/raspberry-pi-ip-visualize/index.html">
+<meta property="og:title" content="Python performance optimize, a practise">
+<meta property="og:url" content="http://yoursite.com/2016/10/29/performance/index.html">
 <meta property="og:site_name" content="Sheep's Knowledge Base">
-<meta property="og:description" content="The IO performance of RPi 3BThe hardware of a RPi 3B is listed below, no surprise, just ordinary as his ancestor：
-
-802.11n Wireless LAN
-4 USB ports (usb 2.0)
-40 GPIO pins
-Full HDMI port
-Ethernet port(">
-<meta property="og:image" content="https://www.raspberrypi.org/wp-content/uploads/2016/02/Pi_3_Model_B.png">
-<meta property="og:updated_time" content="2016-08-22T02:10:07.000Z">
+<meta property="og:description" content="QuestionAssume that we have 10000 genes, which is quantitied in normal ppl and turmor ppl. We have a algorithm to convert it to a bool table, than we want to pick up the combinations of gene have sati">
+<meta property="og:updated_time" content="2016-10-29T09:14:41.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Visualize the IP address of the traffic through the Raspberry PI">
-<meta name="twitter:description" content="The IO performance of RPi 3BThe hardware of a RPi 3B is listed below, no surprise, just ordinary as his ancestor：
-
-802.11n Wireless LAN
-4 USB ports (usb 2.0)
-40 GPIO pins
-Full HDMI port
-Ethernet port(">
-<meta name="twitter:image" content="https://www.raspberrypi.org/wp-content/uploads/2016/02/Pi_3_Model_B.png">
+<meta name="twitter:title" content="Python performance optimize, a practise">
+<meta name="twitter:description" content="QuestionAssume that we have 10000 genes, which is quantitied in normal ppl and turmor ppl. We have a algorithm to convert it to a bool table, than we want to pick up the combinations of gene have sati">
 
 
 
@@ -146,9 +126,9 @@ Ethernet port(">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/08/17/raspberry-pi-ip-visualize/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/10/29/performance/"/>
 
-  <title> Visualize the IP address of the traffic through the Raspberry PI | Sheep's Knowledge Base </title>
+  <title> Python performance optimize, a practise | Sheep's Knowledge Base </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -297,7 +277,7 @@ Ethernet port(">
             
             
               
-                Visualize the IP address of the traffic through the Raspberry PI
+                Python performance optimize, a practise
               
             
           </h1>
@@ -309,30 +289,11 @@ Ethernet port(">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-17T12:21:08+08:00" content="2016-08-17">
-              2016-08-17
+            <time itemprop="dateCreated" datetime="2016-10-29T16:17:14+08:00" content="2016-10-29">
+              2016-10-29
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/network/" itemprop="url" rel="index">
-                    <span itemprop="name">network</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
@@ -356,23 +317,25 @@ Ethernet port(">
       
 
       
-        <h2 id="The-IO-performance-of-RPi-3B"><a href="#The-IO-performance-of-RPi-3B" class="headerlink" title="The IO performance of RPi 3B"></a>The IO performance of RPi 3B</h2><p>The hardware of a RPi 3B is listed below, no surprise, just ordinary as his ancestor：<br><img src="https://www.raspberrypi.org/wp-content/uploads/2016/02/Pi_3_Model_B.png" alt="from rpi’s official site"></p>
-<ul>
-<li><code>802.11n</code> Wireless LAN</li>
-<li>4 USB ports (<code>usb 2.0</code>)</li>
-<li>40 GPIO pins</li>
-<li>Full HDMI port</li>
-<li>Ethernet port(<code>100Mbps</code>)</li>
-<li>Camera interface (CSI)</li>
-<li>Display interface (DSI)</li>
-<li>Micro SD card slot (now push-pull rather than push-push)</li>
-</ul>
-<p>In this generation of RPi, this limitation of performance is mainly in its IO performance, The <code>100Mbps</code> Ethernet, <code>usb 2.0</code> and <code>802.11n</code> Wifi. This kind of performance has kill is possibility to become a <code>NAS</code>,  which I think should have at least 2 <code>STAT</code>, <code>use3.0</code>, <code>1Gbps</code> Ethernet, and a powerful Soc to satisfy this kind of IO requirement. But to be a wireless router, RPi its enough.</p>
-<h2 id="Sniff-the-packet"><a href="#Sniff-the-packet" class="headerlink" title="Sniff the packet"></a>Sniff the packet</h2><p>At the beginning, I use <code>scapy</code> to capture the traffic through the RPi like:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sniff(iface=<span class="string">'ppp0'</span>, prn=<span class="keyword">lambda</span> x: self.handle(x))</div></pre></td></tr></table></figure></p>
-<p>however, its cpu usage is ultra hight to &gt;100%, result in a high ratio of package loss. (~10% captured).<br>After that I find use layer 2’s <code>socket</code> and <code>tcpdump</code> may be better solution.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo tcpdump -i ppp0 -w out traffic.pcap</div></pre></td></tr></table></figure>
-<p>which i can save the traffic to a <code>pcap</code> file and handle it in <code>scapy</code>. </p>
-<h2 id="Handle-the-packet-and-get-the-address"><a href="#Handle-the-packet-and-get-the-address" class="headerlink" title="Handle the packet and get the address:"></a>Handle the packet and get the address:</h2><p>In this capture, we will get the ip address of the traffic, check if it is the local ip or board cast ip address. than, query the public api to get the ipaddress.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">pkts = rdpkt(<span class="string">"traffic.pcap"</span>)</div><div class="line">results = []</div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> pkts:</div><div class="line">	<span class="keyword">if</span> IP <span class="keyword">in</span> x:</div><div class="line">		<span class="keyword">if</span> <span class="keyword">not</span> x[IP].dst[:<span class="number">7</span>] == <span class="string">'192.168'</span> <span class="keyword">and</span> <span class="keyword">not</span> x[IP][:<span class="number">10</span>] == <span class="string">'255.255.255'</span></div><div class="line">			results.append(x[IP].dst)</div></pre></td></tr></table></figure></p>
+        <h1 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h1><p>Assume that we have 10000 genes, which is quantitied in normal ppl and turmor ppl. We have a algorithm to convert it to a bool table, than we want to pick up the combinations of gene have satisfied sensitivity and specificity</p>
+<blockquote>
+<p><strong>Sensitivity</strong> (also called the true positive rate, the recall, or probability of detection[1] in some fields) measures the proportion of positives that are correctly identified as such (e.g., the percentage of sick people who are correctly identified as having the condition).<br><strong>Specificity</strong> (also called the true negative rate) measures the proportion of negatives that are correctly identified as such (e.g., the percentage of healthy people who are correctly identified as not having the condition).</p>
+</blockquote>
+<h1 id="First-idea"><a href="#First-idea" class="headerlink" title="First idea"></a>First idea</h1><p>Seem that intutive idea is like this</p>
+<ol>
+<li>read bool table</li>
+<li>generate combination?</li>
+<li>check the Sen. and Spe.</li>
+</ol>
+<p>use python’s <code>itertools.combination</code> to generate a iterator of combination of potential result and check it. However, even while handling 100 genes, the result may be tremendous. for example<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">5C100 = 75287520</div></pre></td></tr></table></figure></p>
+<p>The Language like Python or perl, handle these kind of loop was terriblly slow, one of my mate takes nearly <strong>35 hours</strong> to finish a 5C100 recombination in Perl.</p>
+<h2 id="Is-every-combination-needed"><a href="#Is-every-combination-needed" class="headerlink" title="Is every combination needed?"></a>Is every combination needed?</h2><p>After pick some genes, we actually have a bool matrix like this:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">      |&lt;-----normal----&gt;|&lt;----turmor-----&gt;|</div><div class="line">g1    0   0   1   1   1   0   1   0   0   0</div><div class="line">g2    1   1   1   0   1   1   0   1   1   1</div></pre></td></tr></table></figure></p>
+<p>than we can calculate the spe, filter the set whose spe or sen &lt; 0.8:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">spec, sen = 0, 0</div><div class="line">spec = len([x for x in range(normal)</div><div class="line">	if g1[x] and ge2[x] </div><div class="line">]) / normal</div><div class="line">sen = len([x for x in range(normal, turmor)</div><div class="line">	if g1[x] and ge2[x] </div><div class="line">]) / turmor</div></pre></td></tr></table></figure></p>
+<p>Here we feel diffcult to reduct the execute time of this part of codes. However, we find out that if one gene’s spe or sen &lt; 0.8, than the combination won’t satisfied the requirements. So some improvements could be made.</p>
+<h2 id="Little-improvements"><a href="#Little-improvements" class="headerlink" title="Little improvements"></a>Little improvements</h2><p>so assume we have a list <code>initial</code>, than we can filter the unsatisfied single gene.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">candidate = [gene <span class="keyword">for</span> gene <span class="keyword">in</span> initial <span class="keyword">if</span> is_satisfied(gene)]</div></pre></td></tr></table></figure></p>
+<p>Than we run first combination, 2 <strong>C</strong> len(candidate), far less than the inital count.</p>
+<h2 id="Go-deeper"><a href="#Go-deeper" class="headerlink" title="Go deeper"></a>Go deeper</h2><p>when we get the result of 2 elements’s combination, we next want to generate the 3 element’s combination.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">def combination(list1, list2):</div><div class="line">	result = []</div><div class="line">	for x in list1:</div><div class="line">		for y in list2:</div><div class="line">			list.append(frozenset(x + [y]))</div><div class="line">	return set(result)</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -395,11 +358,7 @@ Ethernet port(">
       
         <div class="post-tags">
           
-            <a href="/tags/software/" rel="tag">#software</a>
-          
-            <a href="/tags/RPi/" rel="tag">#RPi</a>
-          
-            <a href="/tags/network/" rel="tag">#network</a>
+            <a href="/tags/Python-C/" rel="tag">#Python, C</a>
           
         </div>
       
@@ -408,16 +367,16 @@ Ethernet port(">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/17/csgo-internal-1/" rel="next" title="macOS Csgo Internal Hack partI">
-                <i class="fa fa-chevron-left"></i> macOS Csgo Internal Hack partI
+              <a href="/2016/09/04/cytoscape-js/" rel="next" title="Cytoscape.js drawing simple elements">
+                <i class="fa fa-chevron-left"></i> Cytoscape.js drawing simple elements
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/09/04/embded-iframe/" rel="prev" title="在Hexo中嵌入iframe">
-                在Hexo中嵌入iframe <i class="fa fa-chevron-right"></i>
+              <a href="/2016/11/10/python-package/" rel="prev" title="写一个Python包">
+                写一个Python包 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -543,7 +502,7 @@ Ethernet port(">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-IO-performance-of-RPi-3B"><span class="nav-number">1.</span> <span class="nav-text">The IO performance of RPi 3B</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sniff-the-packet"><span class="nav-number">2.</span> <span class="nav-text">Sniff the packet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Handle-the-packet-and-get-the-address"><span class="nav-number">3.</span> <span class="nav-text">Handle the packet and get the address:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Question"><span class="nav-number">1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#First-idea"><span class="nav-number">2.</span> <span class="nav-text">First idea</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Is-every-combination-needed"><span class="nav-number">2.1.</span> <span class="nav-text">Is every combination needed?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Little-improvements"><span class="nav-number">2.2.</span> <span class="nav-text">Little improvements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Go-deeper"><span class="nav-number">2.3.</span> <span class="nav-text">Go deeper</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

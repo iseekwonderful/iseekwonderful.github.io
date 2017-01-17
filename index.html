@@ -276,6 +276,332 @@
             
               
                 
+                <a class="post-title-link" href="/2017/01/02/matplotlib-font/" itemprop="url">
+                  macOS Matplotlib 字体指南(大雾
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-02T23:23:20+08:00" content="2017-01-02">
+              2017-01-02
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>Matplotlib这个库对比起D3.js, Google chart之类的前端可视化工具来说, 美观度和交互性都有所欠缺, 但是对于<code>学术类</code>的图片, 前两个显的太<code>浮夸</code>. 这时候就需要适当调整<code>Matplotlib</code>, 使得绘图不那么古板.</p>
+<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><p>matplotlib中最蛋疼的东西大概就是字体了，主要的问题在中文的支持问题，还有字体格式的问题。</p>
+<h3 id="字体列表："><a href="#字体列表：" class="headerlink" title="字体列表："></a>字体列表：</h3><p>在默认情况下，中文字体会显示成框框:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">fig, ax = plt.subplots()</div><div class="line">for i, (k, v) in enumerate(nade_per_round):</div><div class="line">    ax.bar(left=i, width= 0.8, height=v, color=([x / 255.0  for x in [245, 79, 41]]</div><div class="line">                                                if k in winner else [x / 255.0  for x in [64, 89, 82]]))</div><div class="line">plt.title(&quot;每局购买投掷物的数量&quot;, &#123;&apos;fontname&apos;:&apos;Wawati SC&apos;,&apos;fontsize&apos;:18&#125;)</div><div class="line">plt.ylim([9, 16])</div><div class="line">ax.set_xticks([i + 0.5 for i, _ in enumerate(nade_per_round)])</div><div class="line">ax.set_xticklabels([x[0] for x in nade_per_round])</div><div class="line">ax.set_ylabel(&quot;nade count&quot;)</div><div class="line">fig.autofmt_xdate()</div><div class="line">fig.savefig(&quot;font-example-no-chinese.png&quot;, dpi=300)</div></pre></td></tr></table></figure></p>
+<p><img src="../../../../../../resource/matplotlib/font-example-no-chinese.png"></p>
+<p><code>每局购买投掷物的数量</code> 直接变成了10个框框，这时最简单的方法就是直接指定字体了。</p>
+<p>那么，有什么字体可以用？网络上可以找到一些简单的方案:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"># 代码来源网络</div><div class="line">from matplotlib.font_manager import fontManager </div><div class="line">import matplotlib.pyplot as plt </div><div class="line">import os </div><div class="line">import os.path </div><div class="line"></div><div class="line">fig = plt.figure(figsize=(12,8)) </div><div class="line">ax = fig.add_subplot(111) </div><div class="line">plt.subplots_adjust(0.04, 0.04, 0.99, 0.95, 0, 0) </div><div class="line">plt.xticks([]) </div><div class="line">plt.yticks([]) </div><div class="line">x, y = 0.05, 0.18 </div><div class="line"></div><div class="line">fonts = [font.name for font in fontManager.ttflist if os.path.exists(font.fname) and os.stat(font.fname).st_size&gt;1e6] </div><div class="line">font = set(fonts) </div><div class="line">dy = (1.0-y)/(len(fonts)/4 + (len(fonts)%4!=0)) </div><div class="line">for font in fonts: </div><div class="line">    t = ax.text(x, y, font+&quot;:&quot;+u&quot;你好&quot;, &#123;&apos;fontname&apos;:font, &apos;fontsize&apos;:14&#125;, transform=ax.transAxes) </div><div class="line">    ax.text(x, y-dy/2, font, transform=ax.transAxes) </div><div class="line">    x += 0.25 </div><div class="line">    if x &gt;= 1.0: </div><div class="line">        y += dy </div><div class="line">        x = 0.05 </div><div class="line">ax.set_xlabel(u&apos;横坐标&apos;,&#123;&apos;fontname&apos;:&apos;STKaiti&apos;&#125;)</div><div class="line">ax.set_ylabel(u&apos;纵坐标&apos;,&#123;&apos;fontname&apos;:&apos;STHupo&apos;,&apos;fontsize&apos;:20&#125;)</div><div class="line">plt.show()</div></pre></td></tr></table></figure></p>
+<p>就可以看到这样一个字体列表：<br><img src="../../../../../../resource/matplotlib/font-list.png"></p>
+<p>嗯，虽然看上去不太和谐，但总算有个列表里，可是里面的东西为什么这么奇怪！<br>其实我只想要一个科学的中文字体和一个等宽字体!?<br>为什么列表里面没有<code>PingFang SC</code>?</p>
+<p>Googling….</p>
+<p>嗯，这里只是<code>ttf</code>格式的字体，不包括<code>ttc</code>或者<code>otf</code>的字体~ 那只好手动加载了。<br><a href="https://support.apple.com/zh-cn/HT201722" target="_blank" rel="external">macOS 上的字体文件夹的位置</a></p>
+<p>比如说我要的<code>PingFang SC</code>就在<code>/系统/资源库/Fonts/</code>下面.</p>
+<h2 id="手动加载字体"><a href="#手动加载字体" class="headerlink" title="手动加载字体"></a>手动加载字体</h2><p>目标：使用PingFang SC作为title的字体.</p>
+<p>Googling … </p>
+<p>很简单，font_manager 提供加载类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># 来源: http://stackoverflow.com/questions/7726852/how-to-use-a-random-otf-or-ttf-font-in-matplotlib</div><div class="line">import matplotlib.font_manager as fm</div><div class="line"></div><div class="line">f = &quot;/System/Library/Fonts/PingFang.ttc&quot;</div><div class="line">prop = fm.FontProperties(fname=f)</div></pre></td></tr></table></figure></p>
+<p>然后在需要用到的时候, 指定一下，就可以了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">plt.title(&quot;每局购买投掷物数量&quot;, fontproperties=prop) #&#123;&apos;fontname&apos;:&apos;simfang&apos;,&apos;fontsize&apos;:18&#125;)</div></pre></td></tr></table></figure></p>
+<p>对于大部分童鞋，应该都可以确定想要用的字体，或者在PS，Sketch上面试一下，找到合适的<br>这样就可以替换掉之前存在的框框了～</p>
+<p>使用<code>PingFang SC</code>的title<br><img src="../../../../../../resource/matplotlib/font-example-chinese.png"></p>
+<h2 id="推荐字体"><a href="#推荐字体" class="headerlink" title="推荐字体"></a>推荐字体</h2><p>建议任何非<strong>演示</strong>，<strong>科学</strong>绘图，请不要使用<code>Matplotlib</code>。<code>Echarts</code>, <code>D3.js</code>这些Web based工具会对绘图提供极大便利，接下来的交互设置也容易很多。另外，使用CSS指定字体也会比Matplotlib中方便很多. </p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/11/10/python-package/" itemprop="url">
+                  写一个Python包
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-10T09:55:23+08:00" content="2016-11-10">
+              2016-11-10
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="一-流程"><a href="#一-流程" class="headerlink" title="一. 流程"></a>一. 流程</h1><ol>
+<li>确定包的功能</li>
+<li>编写测试</li>
+<li>编写功能</li>
+<li>编写文档</li>
+<li>Debug</li>
+</ol>
+<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>测试驱动开发(TDD), 在编写某一个功能之前先编写测试用例，然后迅速使测试工作，然后重构掉其中不合理的部分。对于一个小的工程，首先编写测试可以明确需求和目标，加快开发速度。</p>
+<h1 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h1><p>在包内的每一个类和函数中，都应该加入docstring，详细描述该类/函数的具体参数，功能和返回值。在编写完代码之后，应该使用自动化的工具来生成文档。</p>
+<h1 id="Debug"><a href="#Debug" class="headerlink" title="Debug"></a>Debug</h1><p>Debug….Debu….Deb…De…D..D.</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/29/performance/" itemprop="url">
+                  Python performance optimize, a practise
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-29T16:17:14+08:00" content="2016-10-29">
+              2016-10-29
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h1><p>Assume that we have 10000 genes, which is quantitied in normal ppl and turmor ppl. We have a algorithm to convert it to a bool table, than we want to pick up the combinations of gene have satisfied sensitivity and specificity</p>
+<blockquote>
+<p><strong>Sensitivity</strong> (also called the true positive rate, the recall, or probability of detection[1] in some fields) measures the proportion of positives that are correctly identified as such (e.g., the percentage of sick people who are correctly identified as having the condition).<br><strong>Specificity</strong> (also called the true negative rate) measures the proportion of negatives that are correctly identified as such (e.g., the percentage of healthy people who are correctly identified as not having the condition).</p>
+</blockquote>
+<h1 id="First-idea"><a href="#First-idea" class="headerlink" title="First idea"></a>First idea</h1><p>Seem that intutive idea is like this</p>
+<ol>
+<li>read bool table</li>
+<li>generate combination?</li>
+<li>check the Sen. and Spe.</li>
+</ol>
+<p>use python’s <code>itertools.combination</code> to generate a iterator of combination of potential result and check it. However, even while handling 100 genes, the result may be tremendous. for example<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">5C100 = 75287520</div></pre></td></tr></table></figure></p>
+<p>The Language like Python or perl, handle these kind of loop was terriblly slow, one of my mate takes nearly <strong>35 hours</strong> to finish a 5C100 recombination in Perl.</p>
+<h2 id="Is-every-combination-needed"><a href="#Is-every-combination-needed" class="headerlink" title="Is every combination needed?"></a>Is every combination needed?</h2><p>After pick some genes, we actually have a bool matrix like this:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">      |&lt;-----normal----&gt;|&lt;----turmor-----&gt;|</div><div class="line">g1    0   0   1   1   1   0   1   0   0   0</div><div class="line">g2    1   1   1   0   1   1   0   1   1   1</div></pre></td></tr></table></figure></p>
+<p>than we can calculate the spe, filter the set whose spe or sen &lt; 0.8:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">spec, sen = 0, 0</div><div class="line">spec = len([x for x in range(normal)</div><div class="line">	if g1[x] and ge2[x] </div><div class="line">]) / normal</div><div class="line">sen = len([x for x in range(normal, turmor)</div><div class="line">	if g1[x] and ge2[x] </div><div class="line">]) / turmor</div></pre></td></tr></table></figure></p>
+<p>Here we feel diffcult to reduct the execute time of this part of codes. However, we find out that if one gene’s spe or sen &lt; 0.8, than the combination won’t satisfied the requirements. So some improvements could be made.</p>
+<h2 id="Little-improvements"><a href="#Little-improvements" class="headerlink" title="Little improvements"></a>Little improvements</h2><p>so assume we have a list <code>initial</code>, than we can filter the unsatisfied single gene.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">candidate = [gene <span class="keyword">for</span> gene <span class="keyword">in</span> initial <span class="keyword">if</span> is_satisfied(gene)]</div></pre></td></tr></table></figure></p>
+<p>Than we run first combination, 2 <strong>C</strong> len(candidate), far less than the inital count.</p>
+<h2 id="Go-deeper"><a href="#Go-deeper" class="headerlink" title="Go deeper"></a>Go deeper</h2><p>when we get the result of 2 elements’s combination, we next want to generate the 3 element’s combination.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">def combination(list1, list2):</div><div class="line">	result = []</div><div class="line">	for x in list1:</div><div class="line">		for y in list2:</div><div class="line">			list.append(frozenset(x + [y]))</div><div class="line">	return set(result)</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/09/04/cytoscape-js/" itemprop="url">
                   Cytoscape.js drawing simple elements
                 </a>
@@ -1243,7 +1569,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1260,7 +1586,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1308,7 +1634,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
