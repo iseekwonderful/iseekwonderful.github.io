@@ -1,0 +1,687 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css_old/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="csgo,software," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Overviews
+Inject a dylib to csgo_osx64
+Get the interface and method’s address
+Hook method
+Build up the project
+
+PartI, Injection and Read module handle and method address&amp;emsp;&amp;emsp;To build a interna">
+<meta property="og:type" content="article">
+<meta property="og:title" content="macOS Csgo Internal Hack partI">
+<meta property="og:url" content="http://yoursite.com/2016/08/17/csgo-internal-1/index.html">
+<meta property="og:site_name" content="Sheep's Knowledge Base">
+<meta property="og:description" content="Overviews
+Inject a dylib to csgo_osx64
+Get the interface and method’s address
+Hook method
+Build up the project
+
+PartI, Injection and Read module handle and method address&amp;emsp;&amp;emsp;To build a interna">
+<meta property="og:updated_time" content="2016-08-22T02:10:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="macOS Csgo Internal Hack partI">
+<meta name="twitter:description" content="Overviews
+Inject a dylib to csgo_osx64
+Get the interface and method’s address
+Hook method
+Build up the project
+
+PartI, Injection and Read module handle and method address&amp;emsp;&amp;emsp;To build a interna">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/08/17/csgo-internal-1/"/>
+
+  <title> macOS Csgo Internal Hack partI | Sheep's Knowledge Base </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-83717326-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Sheep's Knowledge Base</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">dont hesitate, just do it</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                macOS Csgo Internal Hack partI
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-17T00:58:28+08:00" content="2016-08-17">
+              2016-08-17
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/software/" itemprop="url" rel="index">
+                    <span itemprop="name">software</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Overviews"><a href="#Overviews" class="headerlink" title="Overviews"></a>Overviews</h2><ul>
+<li>Inject a dylib to <code>csgo_osx64</code></li>
+<li>Get the <code>interface</code> and <code>method</code>’s address</li>
+<li>Hook <code>method</code></li>
+<li>Build up the project</li>
+</ul>
+<h2 id="PartI-Injection-and-Read-module-handle-and-method-address"><a href="#PartI-Injection-and-Read-module-handle-and-method-address" class="headerlink" title="PartI, Injection and Read module handle and method address"></a>PartI, Injection and Read module handle and method address</h2><p>&emsp;&emsp;To build a <code>internal</code> hack, we simply inject a <code>Dynamic Link Library</code> to the gaming process. Start a new <code>Thread</code>, and gather the information we care, and do something.<br>&emsp;&emsp;In this part of the article, we start with the topic of Injection, which is a very normal task in <code>windows</code> and <code>linux</code>, luckily, there are few wheel we can use in macOS:</p>
+<ul>
+<li><a href="http://soundly.me/osx-injection-override-tutorial-hello-world/" target="_blank" rel="external">OSX injection tutorial: Hello World</a></li>
+<li><a href="https://github.com/scen/osxinj" target="_blank" rel="external">A Example to show the Inject process</a></li>
+<li><a href="https://github.com/jar-o/osxinj_tut" target="_blank" rel="external">And its repo provide the hook method</a></li>
+</ul>
+<h3 id="First-step-Build-the-project"><a href="#First-step-Build-the-project" class="headerlink" title="First step: Build the project"></a>First step: Build the project</h3><p>&emsp;&emsp;Let us start with the project the <a href="https://github.com/scen/osxinj" target="_blank" rel="external">second repo</a> mention last section, and copy the third’s repo’s testdylib’s code to replace the second one. so now we get the project. however as <code>valve</code> currently update cogs to 64bit, we need to set 4 project to <code>x86_64</code> in project setting. after this, our project look like this: <code>there should be a image</code><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// the code in install will run after the dylib's injection</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">install</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"loaded\n!"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="Get-the-module-address-and-Find-CreateInterface"><a href="#Get-the-module-address-and-Find-CreateInterface" class="headerlink" title="Get the module address and Find CreateInterface:"></a>Get the module address and Find <code>CreateInterface</code>:</h2><p>&emsp;&emsp;In <code>windows</code> we have <code>GetModuleHandle</code>(may be wrong..)to get the handle of a <code>dll</code>. in macOS, we have the <code>dlopen</code> from <code>dlfcn.h</code> and apple provide detailed docs:</p>
+<ul>
+<li><a href="https://developer.apple.com/library/mac/documentation/DeveloperTools/Conceptual/DynamicLibraries/100-Articles/DynamicLibraryUsageGuidelines.html" target="_blank" rel="external">Dynamic Library Usage Guidelines</a></li>
+<li><a href="https://developer.apple.com/library/mac/documentation/DeveloperTools/Reference/MachOReference/index.html#//apple_ref/c/func/dlopen" target="_blank" rel="external">OS X ABI Dynamic Loader Reference</a><br>The methods we use are detail listed in the docs, what we want to do is simply call them to get the address</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">auto</span> address_of_engine = dlopen(<span class="string">"client.dylib"</span>, RTLD_NOW);</div><div class="line"><span class="keyword">if</span> (!address_of_engine)&#123;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"Unable to read the address of client.dylib: %s\n"</span>, dlerror());</div><div class="line">    <span class="built_in">exit</span>(<span class="number">0</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>&emsp;&emsp;if the <code>dylib</code> has been added into the process’s scope, what is the situation what we meets here, the method will return the handle(address of the dylib in the memory).<br>&emsp;&emsp;After we get the address of the module, we start to ask where is <code>CreateInterface</code> which is the function to get the interface(like <code>entity_list</code>, <code>engine_trace</code>) which module expose to the <code>extern</code>.<br>use the <code>dlsym</code> to the the address:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// define the CreateInterface first</span></div><div class="line"><span class="keyword">typedef</span> <span class="keyword">void</span>* (*CreateInterface)(<span class="keyword">const</span> <span class="keyword">char</span>*, <span class="keyword">int</span> *);</div><div class="line"></div><div class="line"><span class="comment">// next call method dlsym</span></div><div class="line"><span class="keyword">auto</span> clintFactory = (CreateInterface)dlsym(address_of_engine, <span class="string">"CreateInterface"</span>);</div><div class="line"><span class="keyword">if</span> (!address_of_create_interface)&#123;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"Unable to read the address of CreateInterface: %s\n"</span>, dlerror());</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="Use-Factory-to-get-the-Interface"><a href="#Use-Factory-to-get-the-Interface" class="headerlink" title="Use *Factory to get the Interface:"></a>Use <em>*</em>Factory to get the Interface:</h3><p> &emsp;&emsp;After we get the <code>ClientFactory</code> and <code>EngineFactory</code> we have to get the useful object we need when making a hack. like this</p>
+<pre><code class="cpp"><span class="keyword">auto</span> entity_list = (IClientEntityList *)clientFactory(“VClientEntityList003<span class="string">", nil);</span>
+</code></pre>
+<p> After doing this, we get the basic to making a <strong>Internal Hack</strong>.</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/csgo/" rel="tag">#csgo</a>
+          
+            <a href="/tags/software/" rel="tag">#software</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/12/python-echart/" rel="next" title="使用Echarts-Python API生成Options并显示－PartI">
+                <i class="fa fa-chevron-left"></i> 使用Echarts-Python API生成Options并显示－PartI
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/17/raspberry-pi-ip-visualize/" rel="prev" title="Visualize the IP address of the traffic through the Raspberry PI">
+                Visualize the IP address of the traffic through the Raspberry PI <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/chi.png"
+               alt="sheep" />
+          <p class="site-author-name" itemprop="name">sheep</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/iseekwonderful" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overviews"><span class="nav-number">1.</span> <span class="nav-text">Overviews</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PartI-Injection-and-Read-module-handle-and-method-address"><span class="nav-number">2.</span> <span class="nav-text">PartI, Injection and Read module handle and method address</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#First-step-Build-the-project"><span class="nav-number">2.1.</span> <span class="nav-text">First step: Build the project</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Get-the-module-address-and-Find-CreateInterface"><span class="nav-number">3.</span> <span class="nav-text">Get the module address and Find CreateInterface:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Use-Factory-to-get-the-Interface"><span class="nav-number">3.1.</span> <span class="nav-text">Use *Factory to get the Interface:</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">sheep</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

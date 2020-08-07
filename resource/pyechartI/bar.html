@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/3.1.10/echarts.min.js"></script>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 95vw; height: 95vh;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+    "series": [
+        {
+            "type": "bar", 
+            "data": [
+                "50", 
+                "72", 
+                "64", 
+                "42", 
+                "30", 
+                "72"
+            ], 
+            "name": "Tyloo"
+        }, 
+        {
+            "type": "bar", 
+            "data": [
+                "55", 
+                "48", 
+                "56", 
+                "63", 
+                "70", 
+                "55"
+            ], 
+            "name": "VG"
+        }
+    ], 
+    "yAxis": {}, 
+    "legend": {
+        "y": "bottom", 
+        "x": "center", 
+        "data": [
+            "Tyloo", 
+            "VG"
+        ], 
+        "orient": "horizontal"
+    }, 
+    "xAxis": [
+        {
+            "position": "bottom", 
+            "data": [
+                "de_dust2", 
+                "de_cache", 
+                "de_mirage", 
+                "de_cbble", 
+                "de_nuke", 
+                "de_cbble"
+            ], 
+            "name": "map", 
+            "type": "category"
+        }
+    ], 
+    "title": {
+        "text": "The Winrate of Tyloo and VG in this year", 
+        "subtext": "The data is faked"
+    }
+};
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+</body>
+</html>
