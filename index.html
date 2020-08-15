@@ -151,6 +151,88 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/15/merge-hexo-project/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/chi.png">
+      <meta itemprop="name" content="Sheep">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sheep">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/15/merge-hexo-project/" class="post-title-link" itemprop="url">合并hexo dist到新的hexo项目</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-08-15 09:50:57 / 修改时间：10:38:22" itemprop="dateCreated datePublished" datetime="2020-08-15T09:50:57+08:00">2020-08-15</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/patch/" itemprop="url" rel="index"><span itemprop="name">patch</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="1-背景"><a href="#1-背景" class="headerlink" title="1. 背景"></a>1. 背景</h2><p>有一个很久以前的hexo blog，现在只能找到当时的编译结果，找不到<code>markdown</code>和其他资源文件。</p>
+<h2 id="2-解决方法"><a href="#2-解决方法" class="headerlink" title="2. 解决方法"></a>2. 解决方法</h2><p>I. 新建一个<code>hexo project</code>，编译<br>II. 将老项目的文件<code>merge</code>到新项目中</p>
+<h2 id="3-具体步骤"><a href="#3-具体步骤" class="headerlink" title="3. 具体步骤"></a>3. 具体步骤</h2><p>I. 将旧的首页内容追加到新的首页内容后</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">generate_index</span>(<span class="params">path</span>):</span></span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    :param path: parent dir of the new public (dist) and old archive</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">with</span> open(path / <span class="string">&#x27;public&#x27;</span> / <span class="string">&#x27;index.html&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> fp:</span><br><span class="line">        new = fp.read()</span><br><span class="line">    <span class="keyword">with</span> open(path / <span class="string">&#x27;old_archive&#x27;</span> / <span class="string">&#x27;index.html&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> fp:</span><br><span class="line">        old = fp.read()</span><br><span class="line">    stp = []</span><br><span class="line">    <span class="keyword">for</span> m <span class="keyword">in</span> re.finditer(<span class="string">&#x27;article&gt;\s+?&lt;/div&#x27;</span>, new, re.DOTALL):</span><br><span class="line">        stp.append(m.start() + len(<span class="string">&#x27;article&gt;&#x27;</span>) + <span class="number">10</span>)</span><br><span class="line">    output = new[:stp[<span class="number">0</span>]] + <span class="string">&#x27;\n&#x27;</span>.join(re.findall(<span class="string">r&#x27;&lt;article.+?/article&gt;&#x27;</span>, old, re.DOTALL)) + new[stp[<span class="number">0</span>]:]</span><br><span class="line">    <span class="keyword">with</span> open(path / <span class="string">&#x27;public&#x27;</span> / <span class="string">&#x27;index.html&#x27;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> fp:</span><br><span class="line">        fp.write(output)</span><br></pre></td></tr></table></figure>
+
+<p>II. 将<code>old_archive</code>中的必要文件拷贝到新的dist文件夹（视具体情况修改），并将旧页面的<code>css</code>改回原来的<code>css</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line"><span class="keyword">from</span> path <span class="keyword">import</span> Path</span><br><span class="line"><span class="keyword">import</span> glob</span><br><span class="line">path = Path(<span class="string">&#x27;/PATH/TO/DIR&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># root</span></span><br><span class="line">shutil.copytree(path / <span class="string">&#x27;old_archive&#x27;</span> / <span class="string">&#x27;2016&#x27;</span>, path / <span class="string">&#x27;public&#x27;</span> / <span class="string">&#x27;2016&#x27;</span>)</span><br><span class="line">shutil.copytree(path / <span class="string">&#x27;old_archive&#x27;</span> / <span class="string">&#x27;2017&#x27;</span>, path / <span class="string">&#x27;public&#x27;</span> / <span class="string">&#x27;2017&#x27;</span>)</span><br><span class="line">shutil.copytree(path / <span class="string">&#x27;old_archive&#x27;</span> / <span class="string">&#x27;resource&#x27;</span>, path / <span class="string">&#x27;public&#x27;</span> / <span class="string">&#x27;resource&#x27;</span>)</span><br><span class="line">shutil.copytree(path / <span class="string">&#x27;old_archive&#x27;</span> / <span class="string">&#x27;css&#x27;</span>, path / <span class="string">&#x27;public&#x27;</span> / <span class="string">&#x27;css_old&#x27;</span>)</span><br><span class="line"><span class="comment"># archive</span></span><br><span class="line">shutil.copytree(path / <span class="string">&#x27;old_archive&#x27;</span> / <span class="string">&#x27;archives&#x27;</span> / <span class="string">&#x27;2016&#x27;</span>, path / <span class="string">&#x27;public&#x27;</span> / <span class="string">&#x27;archives&#x27;</span> / <span class="string">&#x27;2016&#x27;</span>)</span><br><span class="line">shutil.copytree(path / <span class="string">&#x27;old_archive&#x27;</span> / <span class="string">&#x27;archives&#x27;</span> / <span class="string">&#x27;2017&#x27;</span>, path / <span class="string">&#x27;public&#x27;</span> / <span class="string">&#x27;archives&#x27;</span> / <span class="string">&#x27;2017&#x27;</span>)</span><br><span class="line">shutil.copytree(path / <span class="string">&#x27;old_archive&#x27;</span> / <span class="string">&#x27;vendors&#x27;</span>, path / <span class="string">&#x27;public&#x27;</span> / <span class="string">&#x27;vendors&#x27;</span>)</span><br><span class="line">shutil.copytree(path / <span class="string">&#x27;old_archive&#x27;</span> / <span class="string">&#x27;js/src&#x27;</span>, path / <span class="string">&#x27;public&#x27;</span> / <span class="string">&#x27;js/src&#x27;</span>)</span><br><span class="line">shutil.copytree(path / <span class="string">&#x27;old_archive&#x27;</span> / <span class="string">&#x27;about&#x27;</span>, path / <span class="string">&#x27;public&#x27;</span> / <span class="string">&#x27;about&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将旧页面的css替换回原来的css，解决页面显示错误的问题</span></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> glob.glob(path / <span class="string">&#x27;public&#x27;</span> / <span class="string">&#x27;201*/*/*/*/index.html&#x27;</span>):</span><br><span class="line">    <span class="keyword">with</span> open(x, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> fp:</span><br><span class="line">        con = fp.read().replace(<span class="string">&#x27;/css/main.css?v=5.0.1&#x27;</span>, <span class="string">&#x27;/css_old/main.css?v=5.0.1&#x27;</span>)</span><br><span class="line">    <span class="keyword">with</span> open(x, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> fp:</span><br><span class="line">        fp.write(con)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> list(glob.glob(path / <span class="string">&#x27;public/archives&#x27;</span> / <span class="string">&#x27;201*/index.html&#x27;</span>)) + list(glob.glob(path / <span class="string">&#x27;public/archives&#x27;</span> / <span class="string">&#x27;201*/*/index.html&#x27;</span>)):</span><br><span class="line">    print(x)</span><br><span class="line">    <span class="keyword">with</span> open(x, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> fp:</span><br><span class="line">        con = fp.read().replace(<span class="string">&#x27;/css/main.css?v=5.0.1&#x27;</span>, <span class="string">&#x27;/css_old/main.css?v=5.0.1&#x27;</span>)</span><br><span class="line">    <span class="keyword">with</span> open(x, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> fp:</span><br><span class="line">        fp.write(con)</span><br></pre></td></tr></table></figure>
+
+<p>III. 修改 <code>Archive</code> 文件夹下的内容，修复<code>日志</code>分类下内容显示正确</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> path <span class="keyword">import</span> Path</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line">path = Path(<span class="string">&#x27;/PATH/TO/DIR&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open(path / <span class="string">&#x27;old_archive&#x27;</span> / <span class="string">&#x27;archives&#x27;</span> / <span class="string">&#x27;index.html&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> fp:</span><br><span class="line">    old = BeautifulSoup(fp)</span><br><span class="line"><span class="comment"># 修改旧文章的css</span></span><br><span class="line"><span class="keyword">with</span> open(path / <span class="string">&#x27;public/archives/index.html&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> fp:</span><br><span class="line">    new = BeautifulSoup(fp)</span><br><span class="line"></span><br><span class="line">art = new.find_all(<span class="string">&#x27;div&#x27;</span>, &#123;<span class="string">&#x27;class&#x27;</span>: <span class="string">&#x27;posts-collapse&#x27;</span>&#125;)[<span class="number">0</span>]</span><br><span class="line">hd = old.find_all(<span class="string">&#x27;div&#x27;</span>, &#123;<span class="string">&#x27;class&#x27;</span>: <span class="string">&#x27;collection-title&#x27;</span>&#125;)[<span class="number">1</span>]</span><br><span class="line">hd[<span class="string">&#x27;class&#x27;</span>] = <span class="string">&#x27;collection-year&#x27;</span></span><br><span class="line">hd.h2[<span class="string">&#x27;class&#x27;</span>] = <span class="string">&#x27;collection-header&#x27;</span></span><br><span class="line">hd.h2.name = <span class="string">&#x27;span&#x27;</span></span><br><span class="line">hd.span.contents[<span class="number">0</span>].replaceWith(<span class="string">&#x27;更早之前...&#x27;</span>)</span><br><span class="line"></span><br><span class="line">base = len(list(art.children))</span><br><span class="line">art.insert(base, hd)</span><br><span class="line">base += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i, x <span class="keyword">in</span> enumerate(old.find_all(<span class="string">&#x27;article&#x27;</span>, &#123;<span class="string">&#x27;class&#x27;</span>: <span class="string">&#x27;post post-type-normal&#x27;</span>&#125;)):</span><br><span class="line">    x.h1.name = <span class="string">&#x27;div&#x27;</span></span><br><span class="line">    x.header.contents = [x.header.contents[<span class="number">0</span>], x.header.contents[<span class="number">3</span>], x.header.contents[<span class="number">2</span>], x.header.contents[<span class="number">1</span>]]</span><br><span class="line">    art.insert(base + i, x)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open(path / <span class="string">&#x27;public/archives/index.html&#x27;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> fp:</span><br><span class="line">    fp.write(str(new))</span><br></pre></td></tr></table></figure>
+
+<p>IV. 最后</p>
+<ul>
+<li>部署前执行以上脚本转换，可以修复文章，首页和归档的显示。</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/07/nginx_file_server/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2386,16 +2468,16 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
